@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Details</title>
+    <link th:href="@{/styles/header.css}" rel="stylesheet">
+    <link th:href="@{/styles/common.css}" rel="stylesheet">
+    <link th:href="@{/styles/candidate.css}" rel="stylesheet">
+</head>
+
+<body>
+<div th:replace="fragments/header-user :: header"></div>
+<h1>Candidate Details</h1>
+<div class="container">
+    <div class="resume-header">
+        <h2 th:text="${candidate.fullName}"></h2>
+        <div class="contact-info">
+            <p th:text="${candidate.email}"></p>
+            <p th:text="${candidate.phone}"></p>
+        </div>
+    </div>
+    <div class="resume-section">
+        <h3>Personal Information</h3>
+        <p><strong>Date of Birth:</strong> <span th:text="${candidate.dob}"></span></p>
+        <p><strong>Address:</strong> <span th:text="${candidate.address.street} + ', ' + ${candidate.address.city} + ', ' + ${candidate.address.country}"></span></p>
+        <h3>Skills</h3>
+        <ul>
+            <li th:each="skill : ${skills}">
+                <span th:text="${skill.skill.skillName}"></span> - Level: <span th:text="${skill.skillLevel}"></span>
+            </li>
+        </ul>
+<button class="edit-resume-btn"
+    th:attr="onclick='window.location.href=\'/candidate/edit/' + ${candidate.id} + '\''">Edit Resume</button>
+    </div>
+
+</div>
+</body>
+
+</html>

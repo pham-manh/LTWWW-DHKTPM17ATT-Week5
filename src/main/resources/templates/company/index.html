@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Home</title>
+    <link th:href="@{/styles/company.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="company-index">
+    <header class="company-header">
+        <nav class="company-header-navbar">
+            <div class="company-header-left">
+                <a><img class="company-logo" src="@{assets/iuh_logo.png}"
+                        alt="Company Logo"/></a>
+                <div class="company-header-navbar-item job-link"><a>Việc làm</a></div>
+                <ul class="company-header-navbar-list">
+                    <li class="company-header-navbar-item search-container">
+                        <form action="/search" method="GET" class="search-form">
+                            <input type="text" name="query" placeholder="Tìm kiếm" class="search-input">
+                            <button type="submit" class="search-button">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="company-header-right">
+                <ul class="company-header-navbar-list">
+                    <li class="company-header-navbar-item">
+                        <button class="navbar-button">Đăng nhập</button>
+                    </li>
+                    <li class="company-header-navbar-item">
+                        <button class="navbar-button">Đăng kí</button>
+                    </li>
+                    <li class="company-header-navbar-item">
+                        <button class="navbar-button">Đăng tuyển & Tìm
+                            Hồ
+                            sơ
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="assets/company-sliders/company-sliders1.webp"
+                                        alt="Image 1"></div>
+                <div class="slide"><img src="assets/company-sliders/company-sliders2.webp"
+                                        alt="Image 2"></div>
+                <div class="slide"><img src="assets/company-sliders/company-slider3.webp"
+                                        alt="Image 3"></div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+        <ul class="company-home-list">
+            <li th:each="i : ${#numbers.sequence(1, 6)}">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="title">Gia Sư Toán Tiểu Học/ T...</h3>
+                        <p class="subtitle">VUIHOC.vn</p>
+                        <div class="info-row">
+                            <p><strong>Mức lương:</strong></p>
+                            <p class="salary">2 - 14 triệu</p>
+                        </div>
+                        <div class="info-row">
+                            <p><strong>Địa chỉ:</strong></p>
+                            <p class="location">Hà Nội & 5 nơi khác</p>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="favorite">&hearts;</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer class="footer">
+    </footer>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        const slidesContainer = document.querySelector('.slides');
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 3000);
+</script>
+</body>
+
+</html>

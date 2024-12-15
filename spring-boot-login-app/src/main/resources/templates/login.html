@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Login</title>
+    <link th:href="@{/styles/common.css}" rel="stylesheet">
+    <link th:href="@{/styles/header.css}" rel="stylesheet">
+    <link th:href="@{/styles/login.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="login-container">
+        <h1>FindWorks Login</h1>
+        <form id="login-form" th:action="@{/login}" method="post" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="login-fail-dialog" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h3 class="modal-content-title">Login Fails</h3>
+            <button onclick="closeDialog()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Simulate sending a request
+            setTimeout(function () {
+                // Simulate a login failure condition
+                var loginSuccess = false; // Change this to true to simulate a successful login
+
+                if (!loginSuccess) {
+                    // Show the fail dialog
+                    document.getElementById('login-fail-dialog').style.display = 'flex';
+                }
+            }, 1000);
+        }
+
+        function closeDialog() {
+            document.getElementById('login-fail-dialog').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

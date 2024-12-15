@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Job Detail</title>
+    <link th:href="@{/styles/job-detail.css}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="job-detail">
+        <h1 th:text="${job.jobName}"></h1>
+        <p th:text="${job.company.compName}"></p>
+        <p><strong>Mức lương:</strong> <span th:text="${job.salary}"></span></p>
+        <p><strong>Địa chỉ:</strong> <span th:text="${job.company.address.city}"></span></p>
+        <p th:text="${job.jobDesc}"></p>
+        <button id="applyButton" class="apply-button">Apply</button>
+    </div>
+
+    <div id="successDialog" class="modal-backdrop">
+        <div class="modal-content">
+            <h3 class="modal-content-title">Application submitted successfully!</h3>
+            <button onclick="closeDialog()">Close</button>
+        </div>
+    </div>
+
+       <script>
+        document.getElementById('applyButton').addEventListener('click', function() {
+            // Simulate sending a request
+            setTimeout(function() {
+                // Show the success dialog
+                document.getElementById('successDialog').style.display = 'flex';
+            }, 1000); // Simulate a delay for the request
+        });
+    
+        function closeDialog() {
+            document.getElementById('successDialog').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

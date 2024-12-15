@@ -1,0 +1,216 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.company-header {
+    background-color: white;
+    /* Change background color to white */
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.company-header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* Allow this section to grow */
+}
+
+.company-header-navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.company-header-navbar-item {
+    margin-right: 10px;
+    /* Reduce the margin to make buttons closer */
+}
+
+.company-header-navbar-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.company-header-navbar-item button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    /* Remove border */
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    /* Rounded corners for all sides */
+}
+
+.company-header-navbar-item button:hover {
+    color: rgb(59, 167, 105);
+    /* Change text color on hover */
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+
+.search-button:hover {
+    color: rgb(59, 167, 105);
+    /* Change text color on hover */
+}
+
+.job-link {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* Adjust as needed */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.company-home-list {
+    list-style-type: disc;
+    /* Use disc bullets */
+    padding-left: 20px;
+    /* Add some padding to the left */
+    margin-top: 20px;
+    /* Add some margin to the top */
+}
+.company-home-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create a 3-column grid */
+    gap: 20px;
+    /* Add space between grid items */
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    margin-bottom: 10px;
+}
+
+.card-actions {
+    text-align: right;
+}
+
+.favorite {
+    color: red;
+    cursor: pointer;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+}
+
+.info-row > p {
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.prev-button,
+.next-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.page-number {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Adjust margin as needed */
+}
+
+.job-title {
+    font-size: 1.17em;
+    /* Same as <h3> */
+    font-weight: bold;
+    /* Same as <h3> */
+    color: inherit;
+    /* Inherit color from parent */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.job-title:hover {
+    text-decoration: underline;
+    /* Optional: Add underline on hover */
+}

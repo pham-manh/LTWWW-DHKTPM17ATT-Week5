@@ -1,0 +1,66 @@
+
+.company-header {
+    background-color: white;
+    /* Change background color to white */
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.company-header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* Allow this section to grow */
+}
+
+.company-header-navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.company-header-navbar-item {
+    margin-right: 10px;
+    /* Reduce the margin to make buttons closer */
+}
+
+.company-header-navbar-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.company-header-navbar-item button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    /* Remove border */
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    /* Rounded corners for all sides */
+}
+
+.company-header-navbar-item button:hover {
+    color: rgb(59, 167, 105);
+    /* Change text color on hover */
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+
+.search-button:hover {
+    color: rgb(59, 167, 105);
+    /* Change text color on hover */
+}

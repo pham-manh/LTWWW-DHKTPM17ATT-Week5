@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Fragment</title>
+    <link th:href="@{/styles/header.css}" rel="stylesheet">
+    <link th:href="@{/styles/common.css}" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header class="company-header">
+        <nav class="company-header-navbar">
+            <div class="company-header-left">
+                <a th:href="@{/}">
+                    <img class="company-logo" src="/assets/iuh_logo.png" alt="Company Logo" />
+                </a>
+                <div class="company-header-navbar-item job-link"><a>Việc làm</a></div>
+                <ul class="company-header-navbar-list">
+                    <li class="company-header-navbar-item search-container">
+                        <form action="/search" method="GET" class="search-form">
+                            <input type="text" name="query" placeholder="Tìm kiếm" class="search-input">
+                            <button type="submit" class="search-button">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="company-header-right">
+                <ul class="company-header-navbar-list">
+                    <li class="company-header-navbar-item">
+                        <button class="navbar-button">Đăng tuyển & Tìm Hồ sơ</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>
